@@ -1,3 +1,6 @@
+
+<img src="http://directoutput.github.io/B2SServerSamplePlugin/B2SServerSamplePlugin_big.png">
+
 B2S.Server Sample Plugin
 ========================
 
