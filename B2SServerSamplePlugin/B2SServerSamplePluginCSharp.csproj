@@ -8,8 +8,8 @@
     <ProjectGuid>{C5DA051D-D042-4DEE-9163-9A4BE27DA59F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>B2SServerSamplePlugin</RootNamespace>
-    <AssemblyName>B2SServerSamplePlugin</AssemblyName>
+    <RootNamespace>B2SServerSamplePluginCSharp</RootNamespace>
+    <AssemblyName>B2SServerSamplePluginCSharp</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,17 +31,33 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="B2SServerPluginInterface">
+      <HintPath>..\..\B2SServerPluginInterface\B2SServerPluginInterface\bin\Release\B2SServerPluginInterface.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Frontend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend.Designer.cs">
+      <DependentUpon>Frontend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SamplePluginCSharp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Frontend.resx">
+      <DependentUpon>Frontend.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
