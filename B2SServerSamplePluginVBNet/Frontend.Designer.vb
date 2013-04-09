@@ -22,6 +22,7 @@ Partial Class Frontend
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frontend))
         Me.label1 = New System.Windows.Forms.Label()
         Me.DocuLinkLabel = New System.Windows.Forms.LinkLabel()
         Me.VersionLabel = New System.Windows.Forms.Label()
@@ -75,6 +76,7 @@ Partial Class Frontend
         Me.Controls.Add(Me.VersionLabel)
         Me.Controls.Add(Me.CloseButton)
         Me.Controls.Add(Me.label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Frontend"
         Me.Text = "B2S.Server Sample Plugin VB.net frontend"
         Me.ResumeLayout(False)

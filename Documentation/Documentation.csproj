@@ -37,8 +37,15 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="img\B2SServerSamplePlugin_big.png" />
+    <Content Include="img\B2SServerSamplePlugin_small.png" />
     <Content Include="img\Herweh.png" />
     <Content Include="img\swisslizard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="99_MainPageAndAbout.md" />
+    <None Include="50_Download the Samples.md" />
+    <None Include="60_Using the Samples.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

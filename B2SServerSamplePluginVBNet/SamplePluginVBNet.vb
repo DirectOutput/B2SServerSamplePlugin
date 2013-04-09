@@ -8,7 +8,7 @@
 ''' If a plugin provides a frontend the IDirectPluginFrontend interface has to be implemented as well.<br/>
 ''' <br/>
 ''' In addition to the implementation of the necessary interfaces, the class has to be exported for the use with MEF using the following attribute  [Export(typeof(B2S.IDirectPlugin))] (for VB.net &lt;Export(GetType(B2S.IDirectPlugin))&gt; would be the same).
-''' /remark Remember to change the name of the class to something meaningful for your plugin project when reusing this code.
+''' \remark Remember to change the name of the class to something meaningful for your plugin project when reusing this code.
 ''' </summary>
 <Export(GetType(B2S.IDirectPlugin))>
 Public Class SamplePluginVBNet
@@ -21,7 +21,7 @@ Public Class SamplePluginVBNet
     ''' Gets the name of the plugin.<br/>
     ''' When implmenting this property it is recommended to add the version of the plugin to the name as well.<br/> 
     ''' The IDirectPlugin interface requires the implementation of the property.<br/>
-    ''' /remark If the code of this implementation of the property is reused, be sure to set the versioning information in AssemblyInfo.cs to something like [assembly: AssemblyVersion("1.0.*")]. Otherwise the BuildDate will not be correct.<br/>
+    ''' \remark If the code of this implementation of the property is reused, be sure to set the versioning information in AssemblyInfo.cs to something like [assembly: AssemblyVersion("1.0.*")]. Otherwise the BuildDate will not be correct.<br/>
     ''' </summary>
     ''' <value>
     ''' The name of the IDirectPlugin.
@@ -50,7 +50,9 @@ Public Class SamplePluginVBNet
 
     ''' <summary>
     ''' This method is called, when new data from PinMame becomes available.<br/>
-    ''' The IDirectPlugin interface requires the implementation of this method.
+    ''' The IDirectPlugin interface requires the implementation of this method.<br/>
+    ''' \remark The special care when implementing to keep this method very fast! Slow implementations will slow down Visual Pinball, Pinmame, the B2S.Server as well as all other plugins. 
+    ''' \remark The best solution is to put the data in a queue and process the data in a separate thread.    
     ''' </summary>
     ''' <param name="TableElementTypeChar">Char representing the table element type (S=Solenoid, W=Switch, L=Lamp, M=Mech, G=GI).</param>
     ''' <param name="Number">The number of the table element.</param>
