@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Import Include="B2S" />
+    <Import Include="B2SServerPluginInterface" />
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="System" />
     <Import Include="System.Collections" />

@@ -10,7 +10,7 @@
 ''' In addition to the implementation of the necessary interfaces, the class has to be exported for the use with MEF using the following attribute  [Export(typeof(B2S.IDirectPlugin))] (for VB.net &lt;Export(GetType(B2S.IDirectPlugin))&gt; would be the same).
 ''' \remark Remember to change the name of the class to something meaningful for your plugin project when reusing this code.
 ''' </summary>
-<Export(GetType(B2S.IDirectPlugin))>
+<Export(GetType(IDirectPlugin))>
 Public Class SamplePluginVBNet
     Implements IDirectPlugin, IDirectPluginFrontend
 

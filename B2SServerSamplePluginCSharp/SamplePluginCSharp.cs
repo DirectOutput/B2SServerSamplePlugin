@@ -7,8 +7,8 @@ using System;
 //Makes the MEF functions available (dont forget the a reference to System.ComponentModel.Composition in your own projects)
 using System.ComponentModel.Composition;
 
-//Make the interfaces in the B2SServerPluginInterface.dll available (dont forget to set the reference to the DLL in your own projects).
-using B2S;
+//Makes the interfaces in the B2SServerPluginInterface.dll available (dont forget to set the reference to the DLL in your own projects).
+using B2SServerPluginInterface;
 
 /// <summary>
 /// Main namespace of the B2SServerSamplePlugin.<br/>
@@ -25,7 +25,7 @@ namespace B2SServerSamplePluginCSharp
     /// In addition to the implementation of the necessary interfaces, the class has to be exported for the use with MEF using the following attribute  [Export(typeof(B2S.IDirectPlugin))] (for VB.net &lt;Export(GetType(B2S.IDirectPlugin))&gt; would be the same).
     /// \remark Remember to change the name of the class to something meaningful for your plugin project when reusing this code.
     /// </summary>
-    [Export(typeof(B2S.IDirectPlugin))]
+    [Export(typeof(IDirectPlugin))]
     public class SamplePluginCSharp : IDirectPlugin, IDirectPluginFrontend
     {
 
