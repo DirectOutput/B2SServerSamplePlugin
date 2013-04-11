@@ -1,18 +1,19 @@
-﻿'***************************************************
-'* Sample Plugin implementation for the B2S.Server *
-'***************************************************
+﻿'**********************************************************
+'* Sample VB.net Plugin implementation for the B2S.Server *
+'**********************************************************
 
 ''' <summary>
 ''' Main class of the B2S.Server plugin.<br/>
 ''' This class must implement the IDirectPlugin interface provided by the B2SServerPluginInterface.dll.<br/>
 ''' If a plugin provides a frontend the IDirectPluginFrontend interface has to be implemented as well.<br/>
+''' For plugins wanting to receive updates on important PinMame actions the IDirectPluginPinMame interface has to be implemented.<br/>
 ''' <br/>
 ''' In addition to the implementation of the necessary interfaces, the class has to be exported for the use with MEF using the following attribute  [Export(typeof(B2S.IDirectPlugin))] (for VB.net &lt;Export(GetType(B2S.IDirectPlugin))&gt; would be the same).
 ''' \remark Remember to change the name of the class to something meaningful for your plugin project when reusing this code.
 ''' </summary>
 <Export(GetType(IDirectPlugin))>
 Public Class SamplePluginVBNet
-    Implements IDirectPlugin, IDirectPluginFrontend
+    Implements IDirectPlugin, IDirectPluginFrontend, IDirectPluginPinMame
 
 
 #Region "IDirectPlugin Members"
@@ -38,50 +39,14 @@ Public Class SamplePluginVBNet
 
     End Property
 
-
-
     ''' <summary>
-    ''' This method is called by the B2S.Server, when the property Pause of Pinmame gets set to false.<br/>
+    ''' Initializes the Plugin.<br/>
+    ''' This is the first method, which is called after the plugin has been instanciated by the B2S.Server.<br/>
     ''' The IDirectPlugin interface requires the implementation of this method.<br/>
     ''' </summary>
-    Public Sub PinMameContinue() Implements IDirectPlugin.PinMameContinue
-
-    End Sub
-
-    ''' <summary>
-    ''' This method is called, when new data from PinMame becomes available.<br/>
-    ''' The IDirectPlugin interface requires the implementation of this method.<br/>
-    ''' \remark The special care when implementing to keep this method very fast! Slow implementations will slow down Visual Pinball, Pinmame, the B2S.Server as well as all other plugins. 
-    ''' \remark The best solution is to put the data in a queue and process the data in a separate thread.    
-    ''' </summary>
-    ''' <param name="TableElementTypeChar">Char representing the table element type (S=Solenoid, W=Switch, L=Lamp, M=Mech, G=GI).</param>
-    ''' <param name="Number">The number of the table element.</param>
-    ''' <param name="Value">The value of the table element.</param>
-    Public Sub PinMameDataReceive(TableElementTypeChar As Char, Number As Integer, Value As Integer) Implements IDirectPlugin.PinMameDataReceive
-
-    End Sub
-
-    ''' <summary>
-    ''' This method is called, when the property Pause of Pinmame gets set to true.<br/>
-    ''' The IDirectPlugin interface requires the implementation of this method.<br/>
-    ''' </summary>
-    Public Sub PinMamePause() Implements IDirectPlugin.PinMamePause
-
-    End Sub
-
-    ''' <summary>
-    ''' This method is called by the B2S.Server, when the Run method of PinMame gets called.<br/>
-    ''' The IDirectPlugin interface requires the implementation of this method.<br/>
-    ''' </summary>
-    Public Sub PinMameRun() Implements IDirectPlugin.PinMameRun
-
-    End Sub
-
-    ''' <summary>
-    ''' This method is called by the B2S.Server, when the Stop method of Pinmame is called.<br/>
-    ''' The IDirectPlugin interface requires the implementation of this method.<br/>
-    ''' </summary>
-    Public Sub PinMameStop() Implements IDirectPlugin.PinMameStop
+    ''' <param name="TableFilename">The table filename.</param>
+    ''' <param name="RomName">Name of the rom.</param>
+    Public Sub PluginInit(TableFilename As String, Optional RomName As String = "") Implements IDirectPlugin.PluginInit
 
     End Sub
 
@@ -96,16 +61,61 @@ Public Class SamplePluginVBNet
 
     End Sub
 
+
     ''' <summary>
-    ''' Initializes the Plugin.<br/>
-    ''' This is the first method, which is called after the plugin has been instanciated by the B2S.Server.<br/>
+    ''' This method is called, when new data from PinMame becomes available.<br/>
     ''' The IDirectPlugin interface requires the implementation of this method.<br/>
+    ''' \remark The special care when implementing to keep this method very fast! Slow implementations will slow down Visual Pinball, Pinmame, the B2S.Server as well as all other plugins. 
+    ''' \remark The best solution is to put the data in a queue and process the data in a separate thread.    
     ''' </summary>
-    ''' <param name="TableFilename">The table filename.</param>
-    ''' <param name="RomName">Name of the rom.</param>
-    Public Sub PluginInit(TableFilename As String, Optional RomName As String = "") Implements IDirectPlugin.PluginInit
+    ''' <param name="TableElementTypeChar">Char representing the table element type (S=Solenoid, W=Switch, L=Lamp, M=Mech, G=GI; ?=unknown table element type).</param>
+    ''' <param name="Number">The number of the table element.</param>
+    ''' <param name="Value">The value of the table element.</param>
+    Public Sub DataReceive(TableElementTypeChar As Char, Number As Integer, Value As Integer) Implements IDirectPlugin.DataReceive
 
     End Sub
+
+#End Region
+
+#Region "IDirectPluginPinMame Members"
+
+    ''' <summary>
+    ''' This method is called by the B2S.Server, when the Run method of PinMame gets called.<br/>
+    ''' The IDirectPlugin interface requires the implementation of this method.<br/>
+    ''' </summary>
+    Public Sub PinMameRun() Implements IDirectPluginPinMame.PinMameRun
+
+    End Sub
+
+    ''' <summary>
+    ''' This method is called by the B2S.Server, when the property Pause of Pinmame gets set to false.<br/>
+    ''' The IDirectPlugin interface requires the implementation of this method.<br/>
+    ''' </summary>
+    Public Sub PinMameContinue() Implements IDirectPluginPinMame.PinMameContinue
+
+    End Sub
+
+
+
+    ''' <summary>
+    ''' This method is called, when the property Pause of Pinmame gets set to true.<br/>
+    ''' The IDirectPlugin interface requires the implementation of this method.<br/>
+    ''' </summary>
+    Public Sub PinMamePause() Implements IDirectPluginPinMame.PinMamePause
+
+    End Sub
+
+
+    ''' <summary>
+    ''' This method is called by the B2S.Server, when the Stop method of Pinmame is called.<br/>
+    ''' The IDirectPlugin interface requires the implementation of this method.<br/>
+    ''' </summary>
+    Public Sub PinMameStop() Implements IDirectPluginPinMame.PinMameStop
+
+    End Sub
+
+
+
 
 #End Region
 

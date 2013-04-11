@@ -14,11 +14,11 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "B2SServerSamplePluginVBNet"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DoxygenConfig", "DoxygenConfig", "{B1ACDF7E-3DA6-44EE-BDA2-AF4F43669A5D}"
 	ProjectSection(SolutionItems) = preProject
-		DoxygenConfig\DoxygenConfigFile = DoxygenConfig\DoxygenConfigFile
 		DoxygenConfig\DoxygenConfigFile_Github = DoxygenConfig\DoxygenConfigFile_Github
+		DoxygenConfig\DoxygenConfigFile_Local = DoxygenConfig\DoxygenConfigFile_Local
 		DoxygenConfig\footer.html = DoxygenConfig\footer.html
-		DoxygenConfig\header.html = DoxygenConfig\header.html
 		DoxygenConfig\header_Github.html = DoxygenConfig\header_Github.html
+		DoxygenConfig\header_local.html = DoxygenConfig\header_local.html
 		DoxygenConfig\style.css = DoxygenConfig\style.css
 	EndProjectSection
 EndProject

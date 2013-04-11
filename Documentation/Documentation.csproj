@@ -40,12 +40,21 @@
     <Content Include="img\B2SServerSamplePlugin_big.png" />
     <Content Include="img\B2SServerSamplePlugin_small.png" />
     <Content Include="img\Herweh.png" />
+    <Content Include="img\ImplementCSharp000.jpg" />
+    <Content Include="img\ImplementCSharp001.jpg" />
+    <Content Include="img\ImplementCSharp002.jpg" />
+    <Content Include="img\ImplementCSharp003.jpg" />
+    <Content Include="img\ImplementCSharp004.jpg" />
+    <Content Include="img\ImplementCSharp005.jpg" />
+    <Content Include="img\ImplementCSharp006.jpg" />
+    <Content Include="img\ImplementCSharp007.jpg" />
     <Content Include="img\swisslizard.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="99_MainPageAndAbout.md" />
     <None Include="50_Download the Samples.md" />
-    <None Include="60_Using the Samples.md" />
+    <None Include="70_Implement own plugin CSharp.md" />
+    <None Include="76_Implementation Guidelines.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

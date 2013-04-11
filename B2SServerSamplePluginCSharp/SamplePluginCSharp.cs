@@ -1,6 +1,6 @@
-﻿/***************************************************
- * Sample Plugin implementation for the B2S.Server *
- ***************************************************/
+﻿/******************************************************
+ * Sample C# Plugin implementation for the B2S.Server *
+ *****************************************************/
 
 using System;
 
@@ -21,12 +21,13 @@ namespace B2SServerSamplePluginCSharp
     /// Main class of the B2S.Server plugin.<br/>
     /// This class must implement the IDirectPlugin interface provided by the B2SServerPluginInterface.dll.<br/>
     /// If a plugin provides a frontend the IDirectPluginFrontend interface has to be implemented as well.<br/>
+    /// For plugins wanting to receive updates on important PinMame actions the IDirectPluginPinMame interface has to be implemented.<br/>
     /// <br/>
-    /// In addition to the implementation of the necessary interfaces, the class has to be exported for the use with MEF using the following attribute  [Export(typeof(B2S.IDirectPlugin))] (for VB.net &lt;Export(GetType(B2S.IDirectPlugin))&gt; would be the same).
+    /// In addition to the implementation of the necessary interfaces, the class has to be exported for the use with MEF using the following attribute  [Export(typeof(B2SServerPluginInterface.IDirectPlugin))] (for VB.net &lt;Export(GetType(B2SServerPluginInterface.IDirectPlugin))&gt; would be the same).
     /// \remark Remember to change the name of the class to something meaningful for your plugin project when reusing this code.
     /// </summary>
     [Export(typeof(IDirectPlugin))]
-    public class SamplePluginCSharp : IDirectPlugin, IDirectPluginFrontend
+    public class SamplePluginCSharp : IDirectPlugin, IDirectPluginFrontend, IDirectPluginPinMame
     {
 
         #region IDirectPlugin Members
@@ -53,56 +54,6 @@ namespace B2SServerSamplePluginCSharp
             }
         }
 
-
-        /// <summary>
-        /// This method is called by the B2S.Server, when the property Pause of Pinmame gets set to false.<br/>
-        /// The IDirectPlugin interface requires the implementation of this method.<br/>
-        /// </summary>
-        public void PinMameContinue() { }
-
-        /// <summary>
-        /// This method is called, when new data from PinMame becomes available.<br/>
-        /// The IDirectPlugin interface requires the implementation of this method.<br/>
-        /// \remark The special care when implementing to keep this method very fast! Slow implementations will slow down Visual Pinball, Pinmame, the B2S.Server as well as all other plugins. 
-        /// \remark The best solution is to put the data in a queue and process the data in a separate thread.
-        /// </summary>
-        /// <param name="TableElementTypeChar">Char representing the table element type (S=Solenoid, W=Switch, L=Lamp, M=Mech, G=GI).</param>
-        /// <param name="Number">The number of the table element.</param>
-        /// <param name="Value">The value of the table element.</param>
-        public void PinMameDataReceive(char TableElementTypeChar, int Number, int Value)
-        {
-            
-        }
-
-        /// <summary>
-        /// This method is called, when the property Pause of Pinmame gets set to true.<br/>
-        /// The IDirectPlugin interface requires the implementation of this method.<br/>
-        /// </summary>
-        public void PinMamePause() { }
-
-        /// <summary>
-        /// This method is called by the B2S.Server, when the Run method of PinMame gets called.<br/>
-        /// The IDirectPlugin interface requires the implementation of this method.<br/>
-        /// </summary>
-        public void PinMameRun() { }
-
-        /// <summary>
-        /// This method is called by the B2S.Server, when the Stop method of Pinmame is called.<br/>
-        /// The IDirectPlugin interface requires the implementation of this method.<br/>
-        /// </summary>
-        public void PinMameStop() { }
-
-
-        /// <summary>
-        /// Finishes the plugin.<br />
-        /// This is the last method called, before a plugin is discared. This method is also called, after a undhandled exception has occured in a plugin.<br/>
-        /// PluginFinish must do all nessecary clean up work for the plugin (e.g. release resources).<br/>
-        /// The IDirectPlugin interface requires the implementation of this method.<br/>
-        /// </summary>
-        public void PluginFinish()
-        {
-        }
-
         /// <summary>
         /// Initializes the Plugin.<br/>
         /// This is the first method, which is called after the plugin has been instanciated by the B2S.Server.<br/>
@@ -112,7 +63,64 @@ namespace B2SServerSamplePluginCSharp
         /// <param name="RomName">Name of the rom.</param>
         public void PluginInit(string TableFilename, string RomName)
         {
+            //Initialize your plugin here
         }
+
+        /// <summary>
+        /// Finishes the plugin.<br />
+        /// This is the last method called, before a plugin is discared. This method is also called, after a undhandled exception has occured in a plugin.<br/>
+        /// PluginFinish must do all nessecary clean up work for the plugin (e.g. release resources).<br/>
+        /// The IDirectPlugin interface requires the implementation of this method.<br/>
+        /// </summary>
+        public void PluginFinish()
+        {
+            //Do cleanup work here
+        }
+
+        /// <summary>
+        /// This method is called, when new data from PinMame becomes available.<br/>
+        /// The IDirectPlugin interface requires the implementation of this method.<br/>
+        /// \remark The special care when implementing to keep this method very fast! Slow implementations will slow down Visual Pinball, Pinmame, the B2S.Server as well as all other plugins. 
+        /// \remark The best solution is to put the data in a queue and process the data in a separate thread.
+        /// </summary>
+        /// <param name="TableElementTypeChar">Char representing the table element type (S=Solenoid, W=Switch, L=Lamp, M=Mech, G=GI, ?=Unknown table element).</param>
+        /// <param name="Number">The number of the table element.</param>
+        /// <param name="Value">The value of the table element.</param>
+        public void DataReceive(char TableElementTypeChar, int Number, int Value)
+        {
+            //Do something with the received data.
+        }
+
+        #endregion
+
+        #region IDirectPluginPinMame Members
+
+        /// <summary>
+        /// This method is called by the B2S.Server, when the Run method of PinMame gets called.<br/>
+        /// The IDirectPlugin interface requires the implementation of this method.<br/>
+        /// </summary>
+        public void PinMameRun() {
+        }
+
+        /// <summary>
+        /// This method is called, when the property Pause of Pinmame gets set to true.<br/>
+        /// The IDirectPlugin interface requires the implementation of this method.<br/>
+        /// </summary>
+        public void PinMamePause() { 
+        }
+
+        /// <summary>
+        /// This method is called by the B2S.Server, when the property Pause of Pinmame gets set to false.<br/>
+        /// The IDirectPlugin interface requires the implementation of this method.<br/>
+        /// </summary>
+        public void PinMameContinue() { }
+
+
+        /// <summary>
+        /// This method is called by the B2S.Server, when the Stop method of Pinmame is called.<br/>
+        /// The IDirectPlugin interface requires the implementation of this method.<br/>
+        /// </summary>
+        public void PinMameStop() { } 
 
         #endregion
 
@@ -124,6 +132,7 @@ namespace B2SServerSamplePluginCSharp
         /// </summary>
         public void PluginShowFrontend()
         {
+            //Open the frontend in this method, e.g. as demonstrated below.
             if (F == null)
             {
                 F = new Frontend();
