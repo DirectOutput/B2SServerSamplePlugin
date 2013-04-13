@@ -1,4 +1,4 @@
 var files =
 [
-    [ "B2SServerSamplePlugin", "dir_d9038daede0515c4b6a65f0f4a2e96ba.html", "dir_d9038daede0515c4b6a65f0f4a2e96ba" ]
+    [ "B2SServerSamplePluginCSharp", "dir_3cba6894328fd79c7bd605d4d8e5879e.html", "dir_3cba6894328fd79c7bd605d4d8e5879e" ]
 ];

@@ -26,14 +26,17 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-<table cellspacing="0" cellpadding="0">
+<table cellspacing="0" cellpadding="0" width="100%">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="B2SServerSamplePlugin_small.png"/></td>
+  <td id="projectlogo" width="100px"><img alt="Logo" src="B2SServerSamplePlugin_small.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">B2S.Server Sample Plugin
    </div>
    <div id="projectbrief">Sample plugin implementation for the B2S.Server</div>
+  </td>
+  <td align="right" valign="top">
+  <a href="http://directoutput.github.com/B2SServerPluginInterface/">Switch to B2S.Server Plugin Interface Documentation</a>&nbsp;
   </td>
  </tr>
  </tbody>
@@ -50,7 +53,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -119,47 +121,33 @@ $(document).ready(function(){initNavTree('class_b2_s_server_sample_plugin_c_shar
 <p>Main class of the B2S.Server plugin.<br/>
  This class must implement the IDirectPlugin interface provided by the B2SServerPluginInterface.dll.<br/>
  If a plugin provides a frontend the IDirectPluginFrontend interface has to be implemented as well.<br/>
+ For plugins wanting to receive updates on important PinMame actions the IDirectPluginPinMame interface has to be implemented.<br/>
  <br/>
- In addition to the implementation of the necessary interfaces, the class has to be exported for the use with MEF using the following attribute <a href="for VB.net &amp;lt;Export(GetType(B2S.IDirectPlugin">Export(typeof(B2S.IDirectPlugin))</a>)&gt; would be the same).  
+ In addition to the implementation of the necessary interfaces, the class has to be exported for the use with MEF using the following attribute <a href="for VB.net &amp;lt;Export(GetType(B2SServerPluginInterface.IDirectPlugin">Export(typeof(B2SServerPluginInterface.IDirectPlugin))</a>)&gt; would be the same).  
  <a href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for B2SServerSamplePluginCSharp.SamplePluginCSharp:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp__inherit__graph.png" border="0" usemap="#_b2_s_server_sample_plugin_c_sharp_8_sample_plugin_c_sharp_inherit__map" alt="Inheritance graph"/></div>
+<map name="_b2_s_server_sample_plugin_c_sharp_8_sample_plugin_c_sharp_inherit__map" id="_b2_s_server_sample_plugin_c_sharp_8_sample_plugin_c_sharp_inherit__map">
+</map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for B2SServerSamplePluginCSharp.SamplePluginCSharp:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp__coll__graph.png" border="0" usemap="#_b2_s_server_sample_plugin_c_sharp_8_sample_plugin_c_sharp_coll__map" alt="Collaboration graph"/></div>
+<map name="_b2_s_server_sample_plugin_c_sharp_8_sample_plugin_c_sharp_coll__map" id="_b2_s_server_sample_plugin_c_sharp_8_sample_plugin_c_sharp_coll__map">
+</map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa3489b493f5d98d8166ce5cff7dae46c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#aa3489b493f5d98d8166ce5cff7dae46c">PinMameContinue</a> ()</td></tr>
-<tr class="memdesc:aa3489b493f5d98d8166ce5cff7dae46c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is called by the B2S.Server, when the property Pause of Pinmame gets set to false.<br/>
+<tr class="memitem:a2e7fa4c162a81c1f657ca80a465961da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a2e7fa4c162a81c1f657ca80a465961da">PluginInit</a> (string TableFilename, string RomName)</td></tr>
+<tr class="memdesc:a2e7fa4c162a81c1f657ca80a465961da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the Plugin.<br/>
+ This is the first method, which is called after the plugin has been instanciated by the B2S.Server.<br/>
  The IDirectPlugin interface requires the implementation of this method.<br/>
-  <a href="#aa3489b493f5d98d8166ce5cff7dae46c">More...</a><br/></td></tr>
-<tr class="separator:aa3489b493f5d98d8166ce5cff7dae46c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9656715e8fa0c21cc506d158b19d930"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#ab9656715e8fa0c21cc506d158b19d930">PinMameDataReceive</a> (char TableElementTypeChar, int Number, int Value)</td></tr>
-<tr class="memdesc:ab9656715e8fa0c21cc506d158b19d930"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is called, when new data from PinMame becomes available.<br/>
- The IDirectPlugin interface requires the implementation of this method.<br/>
-  <a href="#ab9656715e8fa0c21cc506d158b19d930">More...</a><br/></td></tr>
-<tr class="separator:ab9656715e8fa0c21cc506d158b19d930"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0695ed6c2f64a854baad0c59fcbc695"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#ac0695ed6c2f64a854baad0c59fcbc695">PinMamePause</a> ()</td></tr>
-<tr class="memdesc:ac0695ed6c2f64a854baad0c59fcbc695"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is called, when the property Pause of Pinmame gets set to true.<br/>
- The IDirectPlugin interface requires the implementation of this method.<br/>
-  <a href="#ac0695ed6c2f64a854baad0c59fcbc695">More...</a><br/></td></tr>
-<tr class="separator:ac0695ed6c2f64a854baad0c59fcbc695"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32720b7cc089337e54e827304df53a64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a32720b7cc089337e54e827304df53a64">PinMameRun</a> ()</td></tr>
-<tr class="memdesc:a32720b7cc089337e54e827304df53a64"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is called by the B2S.Server, when the Run method of PinMame gets called.<br/>
- The IDirectPlugin interface requires the implementation of this method.<br/>
-  <a href="#a32720b7cc089337e54e827304df53a64">More...</a><br/></td></tr>
-<tr class="separator:a32720b7cc089337e54e827304df53a64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5aeed364b718c16e6bf315f639be61c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a5aeed364b718c16e6bf315f639be61c3">PinMameStop</a> ()</td></tr>
-<tr class="memdesc:a5aeed364b718c16e6bf315f639be61c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is called by the B2S.Server, when the Stop method of Pinmame is called.<br/>
- The IDirectPlugin interface requires the implementation of this method.<br/>
-  <a href="#a5aeed364b718c16e6bf315f639be61c3">More...</a><br/></td></tr>
-<tr class="separator:a5aeed364b718c16e6bf315f639be61c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+  <a href="#a2e7fa4c162a81c1f657ca80a465961da">More...</a><br/></td></tr>
+<tr class="separator:a2e7fa4c162a81c1f657ca80a465961da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3737da01e398cda94103db4cf88eac8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#af3737da01e398cda94103db4cf88eac8">PluginFinish</a> ()</td></tr>
 <tr class="memdesc:af3737da01e398cda94103db4cf88eac8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finishes the plugin.<br/>
  This is the last method called, before a plugin is discared. This method is also called, after a undhandled exception has occured in a plugin.<br/>
@@ -167,12 +155,31 @@ Public Member Functions</h2></td></tr>
  The IDirectPlugin interface requires the implementation of this method.<br/>
   <a href="#af3737da01e398cda94103db4cf88eac8">More...</a><br/></td></tr>
 <tr class="separator:af3737da01e398cda94103db4cf88eac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e7fa4c162a81c1f657ca80a465961da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a2e7fa4c162a81c1f657ca80a465961da">PluginInit</a> (string TableFilename, string RomName)</td></tr>
-<tr class="memdesc:a2e7fa4c162a81c1f657ca80a465961da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the Plugin.<br/>
- This is the first method, which is called after the plugin has been instanciated by the B2S.Server.<br/>
+<tr class="memitem:a0d8b19e9eb28db26de33097c435364fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a0d8b19e9eb28db26de33097c435364fe">DataReceive</a> (char TableElementTypeChar, int Number, int Value)</td></tr>
+<tr class="memdesc:a0d8b19e9eb28db26de33097c435364fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is called, when new data from PinMame becomes available.<br/>
  The IDirectPlugin interface requires the implementation of this method.<br/>
-  <a href="#a2e7fa4c162a81c1f657ca80a465961da">More...</a><br/></td></tr>
-<tr class="separator:a2e7fa4c162a81c1f657ca80a465961da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+  <a href="#a0d8b19e9eb28db26de33097c435364fe">More...</a><br/></td></tr>
+<tr class="separator:a0d8b19e9eb28db26de33097c435364fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32720b7cc089337e54e827304df53a64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a32720b7cc089337e54e827304df53a64">PinMameRun</a> ()</td></tr>
+<tr class="memdesc:a32720b7cc089337e54e827304df53a64"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is called by the B2S.Server, when the Run method of PinMame gets called.<br/>
+ The IDirectPlugin interface requires the implementation of this method.<br/>
+  <a href="#a32720b7cc089337e54e827304df53a64">More...</a><br/></td></tr>
+<tr class="separator:a32720b7cc089337e54e827304df53a64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0695ed6c2f64a854baad0c59fcbc695"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#ac0695ed6c2f64a854baad0c59fcbc695">PinMamePause</a> ()</td></tr>
+<tr class="memdesc:ac0695ed6c2f64a854baad0c59fcbc695"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is called, when the property Pause of Pinmame gets set to true.<br/>
+ The IDirectPlugin interface requires the implementation of this method.<br/>
+  <a href="#ac0695ed6c2f64a854baad0c59fcbc695">More...</a><br/></td></tr>
+<tr class="separator:ac0695ed6c2f64a854baad0c59fcbc695"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3489b493f5d98d8166ce5cff7dae46c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#aa3489b493f5d98d8166ce5cff7dae46c">PinMameContinue</a> ()</td></tr>
+<tr class="memdesc:aa3489b493f5d98d8166ce5cff7dae46c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is called by the B2S.Server, when the property Pause of Pinmame gets set to false.<br/>
+ The IDirectPlugin interface requires the implementation of this method.<br/>
+  <a href="#aa3489b493f5d98d8166ce5cff7dae46c">More...</a><br/></td></tr>
+<tr class="separator:aa3489b493f5d98d8166ce5cff7dae46c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aeed364b718c16e6bf315f639be61c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a5aeed364b718c16e6bf315f639be61c3">PinMameStop</a> ()</td></tr>
+<tr class="memdesc:a5aeed364b718c16e6bf315f639be61c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is called by the B2S.Server, when the Stop method of Pinmame is called.<br/>
+ The IDirectPlugin interface requires the implementation of this method.<br/>
+  <a href="#a5aeed364b718c16e6bf315f639be61c3">More...</a><br/></td></tr>
+<tr class="separator:a5aeed364b718c16e6bf315f639be61c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9697c93e3edb59cf3a19806df9618473"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a9697c93e3edb59cf3a19806df9618473">PluginShowFrontend</a> ()</td></tr>
 <tr class="memdesc:a9697c93e3edb59cf3a19806df9618473"><td class="mdescLeft">&#160;</td><td class="mdescRight">PluginShowFrontend is called by the B2S.Server if a plugin has to show its frontend.<br/>
  The IDirectPluginFrontend interface requires the implementation of this method.  <a href="#a9697c93e3edb59cf3a19806df9618473">More...</a><br/></td></tr>
@@ -195,11 +202,12 @@ Properties</h2></td></tr>
 <div class="textblock"><p>Main class of the B2S.Server plugin.<br/>
  This class must implement the IDirectPlugin interface provided by the B2SServerPluginInterface.dll.<br/>
  If a plugin provides a frontend the IDirectPluginFrontend interface has to be implemented as well.<br/>
+ For plugins wanting to receive updates on important PinMame actions the IDirectPluginPinMame interface has to be implemented.<br/>
  <br/>
- In addition to the implementation of the necessary interfaces, the class has to be exported for the use with MEF using the following attribute <a href="for VB.net &amp;lt;Export(GetType(B2S.IDirectPlugin">Export(typeof(B2S.IDirectPlugin))</a>)&gt; would be the same). </p>
+ In addition to the implementation of the necessary interfaces, the class has to be exported for the use with MEF using the following attribute <a href="for VB.net &amp;lt;Export(GetType(B2SServerPluginInterface.IDirectPlugin">Export(typeof(B2SServerPluginInterface.IDirectPlugin))</a>)&gt; would be the same). </p>
 <dl class="section remark"><dt>Remarks</dt><dd>Remember to change the name of the class to something meaningful for your plugin project when reusing this code. </dd></dl>
 
-<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00029">29</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00030">30</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a0665213a63c072c1cc58bac09c7a0567"></a>
 <div class="memitem">
@@ -217,38 +225,17 @@ Properties</h2></td></tr>
 <p>Initializes a new instance of the <a class="el" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html" title="Main class of the B2S.Server plugin.  This class must implement the IDirectPlugin interface provided ...">SamplePluginCSharp</a> class.<br/>
  The class exporting the plugin interface must have a constructor without parameters. If you dont want to do any work in the constructor, the constructor can be ommitted. </p>
 
-<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00144">144</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00153">153</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aa3489b493f5d98d8166ce5cff7dae46c"></a>
+<a class="anchor" id="a0d8b19e9eb28db26de33097c435364fe"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void B2SServerSamplePluginCSharp.SamplePluginCSharp.PinMameContinue </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This method is called by the B2S.Server, when the property Pause of Pinmame gets set to false.<br/>
- The IDirectPlugin interface requires the implementation of this method.<br/>
- </p>
-
-<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00061">61</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ab9656715e8fa0c21cc506d158b19d930"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void B2SServerSamplePluginCSharp.SamplePluginCSharp.PinMameDataReceive </td>
+          <td class="memname">void B2SServerSamplePluginCSharp.SamplePluginCSharp.DataReceive </td>
           <td>(</td>
           <td class="paramtype">char&#160;</td>
           <td class="paramname"><em>TableElementTypeChar</em>, </td>
@@ -281,14 +268,35 @@ Properties</h2></td></tr>
 The best solution is to put the data in a queue and process the data in a separate thread. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">TableElementTypeChar</td><td>Char representing the table element type (S=Solenoid, W=Switch, L=Lamp, M=Mech, G=GI).</td></tr>
+    <tr><td class="paramname">TableElementTypeChar</td><td>Char representing the table element type (S=Solenoid, W=Switch, L=Lamp, M=Mech, G=GI, ?=Unknown table element).</td></tr>
     <tr><td class="paramname">Number</td><td>The number of the table element.</td></tr>
     <tr><td class="paramname">Value</td><td>The value of the table element.</td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00072">72</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00089">89</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa3489b493f5d98d8166ce5cff7dae46c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void B2SServerSamplePluginCSharp.SamplePluginCSharp.PinMameContinue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method is called by the B2S.Server, when the property Pause of Pinmame gets set to false.<br/>
+ The IDirectPlugin interface requires the implementation of this method.<br/>
+ </p>
+
+<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00116">116</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
 
 </div>
 </div>
@@ -309,7 +317,7 @@ The best solution is to put the data in a queue and process the data in a separa
  The IDirectPlugin interface requires the implementation of this method.<br/>
  </p>
 
-<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00081">81</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00109">109</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
 
 </div>
 </div>
@@ -330,7 +338,7 @@ The best solution is to put the data in a queue and process the data in a separa
  The IDirectPlugin interface requires the implementation of this method.<br/>
  </p>
 
-<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00087">87</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00102">102</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
 
 </div>
 </div>
@@ -351,7 +359,7 @@ The best solution is to put the data in a queue and process the data in a separa
  The IDirectPlugin interface requires the implementation of this method.<br/>
  </p>
 
-<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00093">93</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00123">123</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
 
 </div>
 </div>
@@ -374,7 +382,7 @@ The best solution is to put the data in a queue and process the data in a separa
  The IDirectPlugin interface requires the implementation of this method.<br/>
  </p>
 
-<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00102">102</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00075">75</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
 
 </div>
 </div>
@@ -414,7 +422,7 @@ The best solution is to put the data in a queue and process the data in a separa
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00113">113</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00064">64</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
 
 </div>
 </div>
@@ -434,7 +442,7 @@ The best solution is to put the data in a queue and process the data in a separa
 <p>PluginShowFrontend is called by the B2S.Server if a plugin has to show its frontend.<br/>
  The IDirectPluginFrontend interface requires the implementation of this method. </p>
 
-<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00125">125</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00133">133</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
 
 </div>
 </div>
@@ -465,12 +473,12 @@ The best solution is to put the data in a queue and process the data in a separa
  </dd></dl>
 <p>The name of the IDirectPlugin. </p>
 
-<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00044">44</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00045">45</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/Tom/Documents/GitHub/B2SServerSamplePlugin/B2SServerSamplePlugin/<a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a></li>
+<li>C:/Users/Tom/Documents/GitHub/B2SServerSamplePlugin/B2SServerSamplePluginCSharp/<a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -479,7 +487,7 @@ The best solution is to put the data in a queue and process the data in a separa
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_b2_s_server_sample_plugin_c_sharp.html">B2SServerSamplePluginCSharp</a></li><li class="navelem"><a class="el" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html">SamplePluginCSharp</a></li>
-    <li class="footer">Generated on Tue Apr 9 2013 16:29:04 for B2S.Server Sample Plugin by
+    <li class="footer">Generated on Sat Apr 13 2013 17:03:38 for B2S.Server Sample Plugin by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

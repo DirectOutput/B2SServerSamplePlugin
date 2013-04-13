@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>B2S.Server Sample Plugin: C:/Users/Tom/Documents/GitHub/B2SServerSamplePlugin/B2SServerSamplePlugin/SamplePluginCSharp.cs Source File</title>
+<title>B2S.Server Sample Plugin: C:/Users/Tom/Documents/GitHub/B2SServerSamplePlugin/B2SServerSamplePluginCSharp/SamplePluginCSharp.cs Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,14 +26,17 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-<table cellspacing="0" cellpadding="0">
+<table cellspacing="0" cellpadding="0" width="100%">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="B2SServerSamplePlugin_small.png"/></td>
+  <td id="projectlogo" width="100px"><img alt="Logo" src="B2SServerSamplePlugin_small.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">B2S.Server Sample Plugin
    </div>
    <div id="projectbrief">Sample plugin implementation for the B2S.Server</div>
+  </td>
+  <td align="right" valign="top">
+  <a href="http://directoutput.github.com/B2SServerPluginInterface/">Switch to B2S.Server Plugin Interface Documentation</a>&nbsp;
   </td>
  </tr>
  </tbody>
@@ -50,7 +53,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -108,101 +110,109 @@ $(document).ready(function(){initNavTree('_sample_plugin_c_sharp_8cs_source.html
 <div class="title">SamplePluginCSharp.cs</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_sample_plugin_c_sharp_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;﻿<span class="comment">/***************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Sample Plugin implementation for the B2S.Server *</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> ***************************************************/</span></div>
+<a href="_sample_plugin_c_sharp_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;﻿<span class="comment">/******************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Sample C# Plugin implementation for the B2S.Server *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *****************************************************/</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using</span> System;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//Makes the MEF functions available (dont forget the a reference to System.ComponentModel.Composition in your own projects)</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using</span> System.ComponentModel.Composition;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//Make the interfaces in the B2SServerPluginInterface.dll available (dont forget to set the reference to the DLL in your own projects).</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using</span> B2S;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//Makes the interfaces in the B2SServerPluginInterface.dll available (dont forget to set the reference to the DLL in your own projects).</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using</span> B2SServerPluginInterface;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span>B2SServerSamplePluginCSharp</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    [Export(typeof(B2S.IDirectPlugin))]</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html">   29</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html" title="Main class of the B2S.Server plugin.  This class must implement the IDirectPlugin interface provided ...">SamplePluginCSharp</a> : IDirectPlugin, IDirectPluginFrontend</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">        #region IDirectPlugin Members</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a61bd908651ba9404c1939786ae7f60bb" title="Gets the name of the plugin.  When implmenting this property it is recommended to add the version of ...">Name</a></div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a61bd908651ba9404c1939786ae7f60bb">   44</a></span>&#160;        {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keyword">get</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="comment">//Get the version of the assembly</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                Version V =System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="comment">//Calculate the BuildDate based in the build and revsion number of the project.</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                DateTime BuildDate = <span class="keyword">new</span> DateTime(2000, 1, 1).AddDays(V.Build).AddSeconds(V.Revision * 2);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="comment">//Format and return the name string.</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordflow">return</span> <span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot;Sample Plugin C# (V: {0} as of {1})&quot;</span>,V.ToString(), BuildDate.ToString(<span class="stringliteral">&quot;yyyy.MM.dd hh:mm&quot;</span>));</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    [Export(typeof(IDirectPlugin))]</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html">   30</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html" title="Main class of the B2S.Server plugin.  This class must implement the IDirectPlugin interface provided ...">SamplePluginCSharp</a> : IDirectPlugin, IDirectPluginFrontend, IDirectPluginPinMame</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">        #region IDirectPlugin Members</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a61bd908651ba9404c1939786ae7f60bb" title="Gets the name of the plugin.  When implmenting this property it is recommended to add the version of ...">Name</a></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a61bd908651ba9404c1939786ae7f60bb">   45</a></span>&#160;        {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keyword">get</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="comment">//Get the version of the assembly</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                Version V =System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="comment">//Calculate the BuildDate based in the build and revsion number of the project.</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                DateTime BuildDate = <span class="keyword">new</span> DateTime(2000, 1, 1).AddDays(V.Build).AddSeconds(V.Revision * 2);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="comment">//Format and return the name string.</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keywordflow">return</span> <span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot;Sample Plugin C# (V: {0} as of {1})&quot;</span>,V.ToString(), BuildDate.ToString(<span class="stringliteral">&quot;yyyy.MM.dd hh:mm&quot;</span>));</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#aa3489b493f5d98d8166ce5cff7dae46c">   61</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#aa3489b493f5d98d8166ce5cff7dae46c" title="This method is called by the B2S.Server, when the property Pause of Pinmame gets set to false...">PinMameContinue</a>() { }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#ab9656715e8fa0c21cc506d158b19d930">   72</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#ab9656715e8fa0c21cc506d158b19d930" title="This method is called, when new data from PinMame becomes available.  The IDirectPlugin interface req...">PinMameDataReceive</a>(<span class="keywordtype">char</span> TableElementTypeChar, <span class="keywordtype">int</span> Number, <span class="keywordtype">int</span> Value)</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#ac0695ed6c2f64a854baad0c59fcbc695">   81</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#ac0695ed6c2f64a854baad0c59fcbc695" title="This method is called, when the property Pause of Pinmame gets set to true.  The IDirectPlugin interf...">PinMamePause</a>() { }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a32720b7cc089337e54e827304df53a64">   87</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a32720b7cc089337e54e827304df53a64" title="This method is called by the B2S.Server, when the Run method of PinMame gets called.  The IDirectPlugin interface requires the implementation of this method.  ">PinMameRun</a>() { }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno"><a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a5aeed364b718c16e6bf315f639be61c3">   93</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a5aeed364b718c16e6bf315f639be61c3" title="This method is called by the B2S.Server, when the Stop method of Pinmame is called.  The IDirectPlugin interface requires the implementation of this method.  ">PinMameStop</a>() { }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#af3737da01e398cda94103db4cf88eac8">  102</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#af3737da01e398cda94103db4cf88eac8" title="Finishes the plugin.  This is the last method called, before a plugin is discared. This method is also called, after a undhandled exception has occured in a plugin.  PluginFinish must do all nessecary clean up work for the plugin (e.g. release resources).  The IDirectPlugin interface requires the implementation of this method.  ">PluginFinish</a>()</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno"><a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a2e7fa4c162a81c1f657ca80a465961da">  113</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a2e7fa4c162a81c1f657ca80a465961da" title="Initializes the Plugin.  This is the first method, which is called after the plugin has been instanci...">PluginInit</a>(<span class="keywordtype">string</span> TableFilename, <span class="keywordtype">string</span> RomName)</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        }</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">        #endregion</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">        #region IDirectPluginFrontend Members</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00125"></a><span class="lineno"><a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a9697c93e3edb59cf3a19806df9618473">  125</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a9697c93e3edb59cf3a19806df9618473" title="PluginShowFrontend is called by the B2S.Server if a plugin has to show its frontend.  The IDirectPluginFrontend interface requires the implementation of this method. ">PluginShowFrontend</a>()</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        {</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="keywordflow">if</span> (F == null)</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                F = <span class="keyword">new</span> <a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_frontend.html" title="Frontend for the B2S.Server Smaple Plugin. ">Frontend</a>();</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            }</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            F.Show();</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            F.Focus();</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        }</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keyword">private</span> <a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_frontend.html" title="Frontend for the B2S.Server Smaple Plugin. ">Frontend</a> F;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">        #endregion</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="preprocessor">        #region Constructor of the class</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
-<div class="line"><a name="l00144"></a><span class="lineno"><a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a0665213a63c072c1cc58bac09c7a0567">  144</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a0665213a63c072c1cc58bac09c7a0567" title="Initializes a new instance of the SamplePluginCSharp class.  The class exporting the plugin interface...">SamplePluginCSharp</a>()</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        {</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        } </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="preprocessor">        #endregion</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    }</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a2e7fa4c162a81c1f657ca80a465961da">   64</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a2e7fa4c162a81c1f657ca80a465961da" title="Initializes the Plugin.  This is the first method, which is called after the plugin has been instanci...">PluginInit</a>(<span class="keywordtype">string</span> TableFilename, <span class="keywordtype">string</span> RomName)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="comment">//Initialize your plugin here</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#af3737da01e398cda94103db4cf88eac8">   75</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#af3737da01e398cda94103db4cf88eac8" title="Finishes the plugin.  This is the last method called, before a plugin is discared. This method is also called, after a undhandled exception has occured in a plugin.  PluginFinish must do all nessecary clean up work for the plugin (e.g. release resources).  The IDirectPlugin interface requires the implementation of this method.  ">PluginFinish</a>()</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="comment">//Do cleanup work here</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a0d8b19e9eb28db26de33097c435364fe">   89</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a0d8b19e9eb28db26de33097c435364fe" title="This method is called, when new data from PinMame becomes available.  The IDirectPlugin interface req...">DataReceive</a>(<span class="keywordtype">char</span> TableElementTypeChar, <span class="keywordtype">int</span> Number, <span class="keywordtype">int</span> Value)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="comment">//Do something with the received data.</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">        #endregion</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">        #region IDirectPluginPinMame Members</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a32720b7cc089337e54e827304df53a64">  102</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a32720b7cc089337e54e827304df53a64" title="This method is called by the B2S.Server, when the Run method of PinMame gets called.  The IDirectPlugin interface requires the implementation of this method.  ">PinMameRun</a>() {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#ac0695ed6c2f64a854baad0c59fcbc695">  109</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#ac0695ed6c2f64a854baad0c59fcbc695" title="This method is called, when the property Pause of Pinmame gets set to true.  The IDirectPlugin interf...">PinMamePause</a>() { </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#aa3489b493f5d98d8166ce5cff7dae46c">  116</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#aa3489b493f5d98d8166ce5cff7dae46c" title="This method is called by the B2S.Server, when the property Pause of Pinmame gets set to false...">PinMameContinue</a>() { }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a5aeed364b718c16e6bf315f639be61c3">  123</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a5aeed364b718c16e6bf315f639be61c3" title="This method is called by the B2S.Server, when the Stop method of Pinmame is called.  The IDirectPlugin interface requires the implementation of this method.  ">PinMameStop</a>() { } </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">        #endregion</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">        #region IDirectPluginFrontend Members</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00133"></a><span class="lineno"><a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a9697c93e3edb59cf3a19806df9618473">  133</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a9697c93e3edb59cf3a19806df9618473" title="PluginShowFrontend is called by the B2S.Server if a plugin has to show its frontend.  The IDirectPluginFrontend interface requires the implementation of this method. ">PluginShowFrontend</a>()</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <span class="comment">//Open the frontend in this method, e.g. as demonstrated below.</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <span class="keywordflow">if</span> (F == null)</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                F = <span class="keyword">new</span> <a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_frontend.html" title="Frontend for the B2S.Server Smaple Plugin. ">Frontend</a>();</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            F.Show();</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            F.Focus();</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keyword">private</span> <a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_frontend.html" title="Frontend for the B2S.Server Smaple Plugin. ">Frontend</a> F;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="preprocessor">        #endregion</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="preprocessor">        #region Constructor of the class</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a0665213a63c072c1cc58bac09c7a0567">  153</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a0665213a63c072c1cc58bac09c7a0567" title="Initializes a new instance of the SamplePluginCSharp class.  The class exporting the plugin interface...">SamplePluginCSharp</a>()</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        } </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="preprocessor">        #endregion</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    }</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.3.1-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d9038daede0515c4b6a65f0f4a2e96ba.html">B2SServerSamplePlugin</a></li><li class="navelem"><a class="el" href="_sample_plugin_c_sharp_8cs.html">SamplePluginCSharp.cs</a></li>
-    <li class="footer">Generated on Tue Apr 9 2013 16:29:04 for B2S.Server Sample Plugin by
+    <li class="navelem"><a class="el" href="dir_3cba6894328fd79c7bd605d4d8e5879e.html">B2SServerSamplePluginCSharp</a></li><li class="navelem"><a class="el" href="_sample_plugin_c_sharp_8cs.html">SamplePluginCSharp.cs</a></li>
+    <li class="footer">Generated on Sat Apr 13 2013 17:03:38 for B2S.Server Sample Plugin by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

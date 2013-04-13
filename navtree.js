@@ -1,8 +1,26 @@
 var NAVTREE =
 [
   [ "B2S.Server Sample Plugin", "index.html", [
-    [ "Download the Samples", "download.html", null ],
-    [ "Using the Samples", "using.html", null ],
+    [ "Download and using the Samples", "download.html", [
+      [ "Download the samples", "download.html#download_download", null ],
+      [ "Using the samples", "download.html#download_using", null ]
+    ] ],
+    [ "Implement your own plugin using C#", "implementcsharp.html", [
+      [ "Introduction", "implementcsharp.html#implementcsharp_introduction", null ],
+      [ "Prerequisites", "implementcsharp.html#implementcsharp_prerequisites", null ],
+      [ "Implementation Step by Step", "implementcsharp.html#implementcsharp_implement", [
+        [ "Step 1: Create the project", "implementcsharp.html#implementcsharp_step1", null ],
+        [ "Step 2: Add References", "implementcsharp.html#implementcsharp_step2", null ],
+        [ "Step 3: Rename the class", "implementcsharp.html#implementcsharp_step3", null ],
+        [ "Step 4: Add using statements", "implementcsharp.html#implementcsharp_step4", null ],
+        [ "Step 5: Export the class", "implementcsharp.html#implementcsharp_step5", null ],
+        [ "Step 6: Implement IDirectPlugin interface(s)", "implementcsharp.html#implementcsharp_step6", null ],
+        [ "Step 7: Be creative!", "implementcsharp.html#implementcsharp_step7", null ],
+        [ "Step 8: Build and Install", "implementcsharp.html#implementcsharp_step8", null ],
+        [ "Step 9: Test the Plugin", "implementcsharp.html#implementcsharp_step9", null ]
+      ] ]
+    ] ],
+    [ "Guidelines for plugin implementations", "guidelines.html", null ],
     [ "About", "md_99__main_page_and_about.html", null ],
     [ "Packages", null, [
       [ "Packages", "namespaces.html", "namespaces" ]
@@ -17,9 +35,7 @@ var NAVTREE =
         [ "Properties", "functions_prop.html", null ]
       ] ]
     ] ],
-    [ "Files", null, [
-      [ "File List", "files.html", "files" ]
-    ] ]
+    [ "File List", "files.html", "files" ]
   ] ]
 ];
 
