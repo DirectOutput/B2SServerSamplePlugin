@@ -78,6 +78,7 @@ Partial Class Frontend
         Me.Controls.Add(Me.label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Frontend"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "B2S.Server Sample Plugin VB.net frontend"
         Me.ResumeLayout(False)
         Me.PerformLayout()

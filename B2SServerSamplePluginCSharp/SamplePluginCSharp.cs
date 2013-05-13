@@ -10,6 +10,9 @@ using System.ComponentModel.Composition;
 //Makes the interfaces in the B2SServerPluginInterface.dll available (dont forget to set the reference to the DLL in your own projects).
 using B2SServerPluginInterface;
 
+//Makes the forms namespace available. Used for the frontend call.
+using System.Windows.Forms;
+
 /// <summary>
 /// Main namespace of the B2SServerSamplePlugin.<br/>
 /// \remark Change the name of the namespace to match your own project, when reusing the code.
@@ -83,7 +86,7 @@ namespace B2SServerSamplePluginCSharp
         /// \remark The special care when implementing to keep this method very fast! Slow implementations will slow down Visual Pinball, Pinmame, the B2S.Server as well as all other plugins. 
         /// \remark The best solution is to put the data in a queue and process the data in a separate thread.
         /// </summary>
-        /// <param name="TableElementTypeChar">Char representing the table element type (S=Solenoid, W=Switch, L=Lamp, M=Mech, G=GI, ?=Unknown table element).</param>
+        /// <param name="TableElementTypeChar">Char representing the table element type (S=Solenoid, W=Switch, L=Lamp, M=Mech, G=GI, E=EMTable, ?=Unknown table element).</param>
         /// <param name="Number">The number of the table element.</param>
         /// <param name="Value">The value of the table element.</param>
         public void DataReceive(char TableElementTypeChar, int Number, int Value)
@@ -127,23 +130,42 @@ namespace B2SServerSamplePluginCSharp
         #region IDirectPluginFrontend Members
 
         /// <summary>
-        /// PluginShowFrontend is called by the B2S.Server if a plugin has to show its frontend.<br/>
+        /// PluginShowFrontend is called by the B2S.Server if a plugin has to show its frontend.<br />
         /// The IDirectPluginFrontend interface requires the implementation of this method.
         /// </summary>
-        public void PluginShowFrontend()
+        /// <param name="Owner">(optional) The owner window of the frontend to be opend.<br/>Make sure that your plugin does also support null for this parameter.</param>
+        public void PluginShowFrontend(Form Owner = null)
         {
             //Open the frontend in this method, e.g. as demonstrated below.
-            if (F == null)
+
+            //Check if the frontend window is already open
+            //If yes, bring it to the front and set focus
+            foreach (Form F in Application.OpenForms)
             {
-                F = new Frontend();
+                if (F.GetType() == typeof(Frontend))
+                {
+                    F.BringToFront();
+                    F.Focus();
+                    return;
+                }
             }
-            F.Show();
-            F.Focus();
+    
+            //If the frontend is not yet open, create a new instance and show it
+            Frontend FE = new Frontend();
+            if (Owner == null)
+            {
+                //Owner para is not set.
+                FE.Show();
+            }
+            else
+            {
+                //Owner para set set. Show frontend and pass owner para.
+                FE.Show(Owner);
+            }
         }
-        private Frontend F;
+
 
         #endregion
-
 
         #region Constructor of the class
         /// <summary>

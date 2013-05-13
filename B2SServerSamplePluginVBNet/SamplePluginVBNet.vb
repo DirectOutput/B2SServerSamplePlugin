@@ -2,6 +2,8 @@
 '* Sample VB.net Plugin implementation for the B2S.Server *
 '**********************************************************
 
+Imports System.Windows.Forms
+
 ''' <summary>
 ''' Main class of the B2S.Server plugin.<br/>
 ''' This class must implement the IDirectPlugin interface provided by the B2SServerPluginInterface.dll.<br/>
@@ -11,6 +13,7 @@
 ''' In addition to the implementation of the necessary interfaces, the class has to be exported for the use with MEF using the following attribute  [Export(typeof(B2S.IDirectPlugin))] (for VB.net &lt;Export(GetType(B2S.IDirectPlugin))&gt; would be the same).
 ''' \remark Remember to change the name of the class to something meaningful for your plugin project when reusing this code.
 ''' </summary>
+
 <Export(GetType(IDirectPlugin))>
 Public Class SamplePluginVBNet
     Implements IDirectPlugin, IDirectPluginFrontend, IDirectPluginPinMame
@@ -68,7 +71,7 @@ Public Class SamplePluginVBNet
     ''' \remark The special care when implementing to keep this method very fast! Slow implementations will slow down Visual Pinball, Pinmame, the B2S.Server as well as all other plugins. 
     ''' \remark The best solution is to put the data in a queue and process the data in a separate thread.    
     ''' </summary>
-    ''' <param name="TableElementTypeChar">Char representing the table element type (S=Solenoid, W=Switch, L=Lamp, M=Mech, G=GI; ?=unknown table element type).</param>
+    ''' <param name="TableElementTypeChar">Char representing the table element type (S=Solenoid, W=Switch, L=Lamp, M=Mech, G=GI, E=EMTable, ?=unknown table element type).</param>
     ''' <param name="Number">The number of the table element.</param>
     ''' <param name="Value">The value of the table element.</param>
     Public Sub DataReceive(TableElementTypeChar As Char, Number As Integer, Value As Integer) Implements IDirectPlugin.DataReceive
@@ -122,19 +125,37 @@ Public Class SamplePluginVBNet
 #Region "IDirectPluginFrontend Members"
 
     ''' <summary>
-    ''' PluginShowFrontend is called by the B2S.Server if a plugin has to show its frontend.<br/>
+    ''' PluginShowFrontend is called by the B2S.Server if a plugin has to show its frontend.<br />
     ''' The IDirectPluginFrontend interface requires the implementation of this method.
     ''' </summary>
-    Public Sub PluginShowFrontend() Implements IDirectPluginFrontend.PluginShowFrontend
-        If F Is Nothing Then
-            F = New Frontend()
-        End If
-        F.Show()
-        F.Focus()
-    End Sub
-    Private F As Frontend
-#End Region
+    ''' <param name="Owner">(optional)The owner window for the frontend.<br/>Make sure you also support Nothing for this parameter.</param>
+    Public Sub PluginShowFrontend(Optional Owner As Form = Nothing) Implements IDirectPluginFrontend.PluginShowFrontend
 
+        ' Open the frontend in this method
+
+        'Check if the frontend is already open
+        'If yes, bring it to the front and set focus
+        For Each F As Form In Application.OpenForms
+            If TypeOf F Is Frontend Then
+                F.BringToFront()
+                F.Focus()
+                Return
+            End If
+        Next
+
+        'If the frontend is not yet open, create a new instance and show it
+        Dim FE As Frontend = New Frontend()
+        If Owner Is Nothing Then
+            'Owner para is not set.
+            FE.Show()
+        Else
+            'Owner para set set. Show frontend and pass owner para.
+            FE.Show(Owner)
+        End If
+
+    End Sub
+
+#End Region
 
 #Region "Constructor of the class"
     ''' <summary>

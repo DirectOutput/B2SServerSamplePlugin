@@ -160,6 +160,8 @@ Copy this dll to a appropriatley named sub folder of the plugin directory of you
 
 \image html ImplementCSharp007.jpg "Directory structure"
 
+Alternatively you can also put your plugin into any other directory on your system and add a windows shortcut pointing to this directory to the plugin directory of your B2S.Server installation.
+
 \subsection implementcsharp_step9 Step 9: Test the Plugin
 
 After you have installed your plugin as advised above, it is time for some action.

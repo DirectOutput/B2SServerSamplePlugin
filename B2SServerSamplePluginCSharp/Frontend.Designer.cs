@@ -87,6 +87,7 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frontend";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "B2S.Server sample plugin C# frontend";
             this.Load += new System.EventHandler(this.Frontend_Load);
             this.ResumeLayout(false);
