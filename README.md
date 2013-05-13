@@ -4,6 +4,6 @@
 B2S.Server Sample Plugin
 ========================
 
-This is a implementation of a simple dummy plugin for the B2S.Server.
+These are implementations of simple dummy plugins in C# and vb.net for the B2S.Server.
 
-The documentation on this sample plugin can be found at http://directoutput.github.io/B2SServerSamplePlugin/.
+The documentation on this sample plugin project can be found at http://directoutput.github.io/B2SServerSamplePlugin/.
