@@ -19,9 +19,9 @@ var NAVTREEINDEX0 =
 "class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a32720b7cc089337e54e827304df53a64":[5,0,0,1,4],
 "class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a5aeed364b718c16e6bf315f639be61c3":[5,0,0,1,5],
 "class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a61bd908651ba9404c1939786ae7f60bb":[5,0,0,1,9],
-"class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a9697c93e3edb59cf3a19806df9618473":[5,0,0,1,8],
 "class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#aa3489b493f5d98d8166ce5cff7dae46c":[5,0,0,1,2],
 "class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#ac0695ed6c2f64a854baad0c59fcbc695":[5,0,0,1,3],
+"class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#ad69fb7bfb195c65c5818c7656a96424c":[5,0,0,1,8],
 "class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#af3737da01e398cda94103db4cf88eac8":[5,0,0,1,6],
 "classes.html":[5,1],
 "dir_3cba6894328fd79c7bd605d4d8e5879e.html":[6,0],
@@ -50,8 +50,8 @@ var NAVTREEINDEX0 =
 "implementcsharp.html#implementcsharp_step9":[1,2,8],
 "index.html":[],
 "md_99__main_page_and_about.html":[3],
-"namespace_b2_s_server_sample_plugin_c_sharp.html":[5,0,0],
 "namespace_b2_s_server_sample_plugin_c_sharp.html":[4,0,0],
+"namespace_b2_s_server_sample_plugin_c_sharp.html":[5,0,0],
 "namespaces.html":[4,0],
 "pages.html":[]
 };

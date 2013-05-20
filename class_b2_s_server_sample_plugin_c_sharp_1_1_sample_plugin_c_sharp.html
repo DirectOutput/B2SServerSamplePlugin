@@ -21,7 +21,8 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
-<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="directoutputstyle.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -129,15 +130,11 @@ $(document).ready(function(){initNavTree('class_b2_s_server_sample_plugin_c_shar
 Inheritance diagram for B2SServerSamplePluginCSharp.SamplePluginCSharp:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp__inherit__graph.png" border="0" usemap="#_b2_s_server_sample_plugin_c_sharp_8_sample_plugin_c_sharp_inherit__map" alt="Inheritance graph"/></div>
-<map name="_b2_s_server_sample_plugin_c_sharp_8_sample_plugin_c_sharp_inherit__map" id="_b2_s_server_sample_plugin_c_sharp_8_sample_plugin_c_sharp_inherit__map">
-</map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for B2SServerSamplePluginCSharp.SamplePluginCSharp:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp__coll__graph.png" border="0" usemap="#_b2_s_server_sample_plugin_c_sharp_8_sample_plugin_c_sharp_coll__map" alt="Collaboration graph"/></div>
-<map name="_b2_s_server_sample_plugin_c_sharp_8_sample_plugin_c_sharp_coll__map" id="_b2_s_server_sample_plugin_c_sharp_8_sample_plugin_c_sharp_coll__map">
-</map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -180,10 +177,10 @@ Public Member Functions</h2></td></tr>
  The IDirectPlugin interface requires the implementation of this method.<br/>
   <a href="#a5aeed364b718c16e6bf315f639be61c3">More...</a><br/></td></tr>
 <tr class="separator:a5aeed364b718c16e6bf315f639be61c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9697c93e3edb59cf3a19806df9618473"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a9697c93e3edb59cf3a19806df9618473">PluginShowFrontend</a> ()</td></tr>
-<tr class="memdesc:a9697c93e3edb59cf3a19806df9618473"><td class="mdescLeft">&#160;</td><td class="mdescRight">PluginShowFrontend is called by the B2S.Server if a plugin has to show its frontend.<br/>
- The IDirectPluginFrontend interface requires the implementation of this method.  <a href="#a9697c93e3edb59cf3a19806df9618473">More...</a><br/></td></tr>
-<tr class="separator:a9697c93e3edb59cf3a19806df9618473"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad69fb7bfb195c65c5818c7656a96424c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#ad69fb7bfb195c65c5818c7656a96424c">PluginShowFrontend</a> (Form Owner=null)</td></tr>
+<tr class="memdesc:ad69fb7bfb195c65c5818c7656a96424c"><td class="mdescLeft">&#160;</td><td class="mdescRight">PluginShowFrontend is called by the B2S.Server if a plugin has to show its frontend.<br/>
+ The IDirectPluginFrontend interface requires the implementation of this method.  <a href="#ad69fb7bfb195c65c5818c7656a96424c">More...</a><br/></td></tr>
+<tr class="separator:ad69fb7bfb195c65c5818c7656a96424c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0665213a63c072c1cc58bac09c7a0567"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a0665213a63c072c1cc58bac09c7a0567">SamplePluginCSharp</a> ()</td></tr>
 <tr class="memdesc:a0665213a63c072c1cc58bac09c7a0567"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html" title="Main class of the B2S.Server plugin.  This class must implement the IDirectPlugin interface provided ...">SamplePluginCSharp</a> class.<br/>
  The class exporting the plugin interface must have a constructor without parameters. If you dont want to do any work in the constructor, the constructor can be ommitted.  <a href="#a0665213a63c072c1cc58bac09c7a0567">More...</a><br/></td></tr>
@@ -207,7 +204,7 @@ Properties</h2></td></tr>
  In addition to the implementation of the necessary interfaces, the class has to be exported for the use with MEF using the following attribute <a href="for VB.net &amp;lt;Export(GetType(B2SServerPluginInterface.IDirectPlugin">Export(typeof(B2SServerPluginInterface.IDirectPlugin))</a>)&gt; would be the same). </p>
 <dl class="section remark"><dt>Remarks</dt><dd>Remember to change the name of the class to something meaningful for your plugin project when reusing this code. </dd></dl>
 
-<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00030">30</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00033">33</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a0665213a63c072c1cc58bac09c7a0567"></a>
 <div class="memitem">
@@ -225,7 +222,7 @@ Properties</h2></td></tr>
 <p>Initializes a new instance of the <a class="el" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html" title="Main class of the B2S.Server plugin.  This class must implement the IDirectPlugin interface provided ...">SamplePluginCSharp</a> class.<br/>
  The class exporting the plugin interface must have a constructor without parameters. If you dont want to do any work in the constructor, the constructor can be ommitted. </p>
 
-<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00153">153</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00175">175</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
 
 </div>
 </div>
@@ -268,14 +265,14 @@ Properties</h2></td></tr>
 The best solution is to put the data in a queue and process the data in a separate thread. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">TableElementTypeChar</td><td>Char representing the table element type (S=Solenoid, W=Switch, L=Lamp, M=Mech, G=GI, ?=Unknown table element).</td></tr>
+    <tr><td class="paramname">TableElementTypeChar</td><td>Char representing the table element type (S=Solenoid, W=Switch, L=Lamp, M=Mech, G=GI, E=EMTable, ?=Unknown table element).</td></tr>
     <tr><td class="paramname">Number</td><td>The number of the table element.</td></tr>
     <tr><td class="paramname">Value</td><td>The value of the table element.</td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00089">89</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00092">92</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
 
 </div>
 </div>
@@ -296,7 +293,7 @@ The best solution is to put the data in a queue and process the data in a separa
  The IDirectPlugin interface requires the implementation of this method.<br/>
  </p>
 
-<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00116">116</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00119">119</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
 
 </div>
 </div>
@@ -317,7 +314,7 @@ The best solution is to put the data in a queue and process the data in a separa
  The IDirectPlugin interface requires the implementation of this method.<br/>
  </p>
 
-<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00109">109</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00112">112</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
 
 </div>
 </div>
@@ -338,7 +335,7 @@ The best solution is to put the data in a queue and process the data in a separa
  The IDirectPlugin interface requires the implementation of this method.<br/>
  </p>
 
-<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00102">102</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00105">105</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
 
 </div>
 </div>
@@ -359,7 +356,7 @@ The best solution is to put the data in a queue and process the data in a separa
  The IDirectPlugin interface requires the implementation of this method.<br/>
  </p>
 
-<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00123">123</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00126">126</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
 
 </div>
 </div>
@@ -382,7 +379,7 @@ The best solution is to put the data in a queue and process the data in a separa
  The IDirectPlugin interface requires the implementation of this method.<br/>
  </p>
 
-<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00075">75</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00078">78</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
 
 </div>
 </div>
@@ -422,18 +419,19 @@ The best solution is to put the data in a queue and process the data in a separa
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00064">64</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00067">67</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a9697c93e3edb59cf3a19806df9618473"></a>
+<a class="anchor" id="ad69fb7bfb195c65c5818c7656a96424c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void B2SServerSamplePluginCSharp.SamplePluginCSharp.PluginShowFrontend </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">Form&#160;</td>
+          <td class="paramname"><em>Owner</em> = <code>null</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -441,8 +439,15 @@ The best solution is to put the data in a queue and process the data in a separa
 
 <p>PluginShowFrontend is called by the B2S.Server if a plugin has to show its frontend.<br/>
  The IDirectPluginFrontend interface requires the implementation of this method. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Owner</td><td>(optional) The owner window of the frontend to be opend.<br/>
+Make sure that your plugin does also support null for this parameter.</td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00133">133</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00137">137</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
 
 </div>
 </div>
@@ -473,7 +478,7 @@ The best solution is to put the data in a queue and process the data in a separa
  </dd></dl>
 <p>The name of the IDirectPlugin. </p>
 
-<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00045">45</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sample_plugin_c_sharp_8cs_source.html#l00048">48</a> of file <a class="el" href="_sample_plugin_c_sharp_8cs_source.html">SamplePluginCSharp.cs</a>.</p>
 
 </div>
 </div>
@@ -487,10 +492,18 @@ The best solution is to put the data in a queue and process the data in a separa
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_b2_s_server_sample_plugin_c_sharp.html">B2SServerSamplePluginCSharp</a></li><li class="navelem"><a class="el" href="class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html">SamplePluginCSharp</a></li>
-    <li class="footer">Generated on Sat Apr 13 2013 17:03:38 for B2S.Server Sample Plugin by
+    <li class="footer">Generated on Mon May 20 2013 12:37:20 for B2S.Server Sample Plugin by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>
 </div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-39987816-3', 'github.io');
+  ga('send', 'pageview');
+</script>
 </body>
 </html>

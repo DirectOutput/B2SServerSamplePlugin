@@ -8,6 +8,6 @@ var class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp =
     [ "PinMameStop", "class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a5aeed364b718c16e6bf315f639be61c3", null ],
     [ "PluginFinish", "class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#af3737da01e398cda94103db4cf88eac8", null ],
     [ "PluginInit", "class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a2e7fa4c162a81c1f657ca80a465961da", null ],
-    [ "PluginShowFrontend", "class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a9697c93e3edb59cf3a19806df9618473", null ],
+    [ "PluginShowFrontend", "class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#ad69fb7bfb195c65c5818c7656a96424c", null ],
     [ "Name", "class_b2_s_server_sample_plugin_c_sharp_1_1_sample_plugin_c_sharp.html#a61bd908651ba9404c1939786ae7f60bb", null ]
 ];
