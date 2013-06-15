@@ -31,8 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="B2SServerPluginInterface">
-      <HintPath>..\..\B2SServerPluginInterface\B2SServerPluginInterface\bin\Release\B2SServerPluginInterface.dll</HintPath>
+    <Reference Include="B2SServerPluginInterface, Version=0.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\B2SServerPluginInterface_V1.0_20130615\B2SServerPluginInterface.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
