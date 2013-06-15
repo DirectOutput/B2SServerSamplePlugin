@@ -120,7 +120,7 @@ $(document).ready(function(){initNavTree('76___implementation_01_guidelines_8md.
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;- &lt;b&gt;Error handling&lt;/b&gt;&lt;br/&gt;It is important that all exceptions that might occur in your code are handled inside the plugin. If you pluging <span class="keywordflow">throws</span> any unhandled exceptions, the B2S.Server will deactivate the plugin. You can check the status of the plugins in the plugin window of the B2S.Server.</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;- &lt;b&gt;B2SServerPluginInterface&lt;/b&gt;&lt;br/&gt;Dont compile your own B2SServerPluginInterface.dll. Download a binary version of the dll (e.g. together with the B2S.Server), to avaoid versioning problems.</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;- &lt;b&gt;Windows and Forms&lt;/b&gt;&lt;br/&gt;If your plugin opens and updates windows, it will likely slow down the system. Updating windows from separate threads is quite tricky and sometimes unreliable. In such a <span class="keywordflow">case</span> you might want to consider running a separate process/exe file doing all work necessary to open and update windows (B2S.Server does the same thing).</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;- &lt;b&gt;Name&lt;/b&gt;&lt;br/&gt;Make sure you plugin returns something meaningful <span class="keywordflow">for</span> the name <span class="keyword">property</span> of the IDirectPlugin interface. It is recommended that you also include the version and/or the build date of you plugin in the Name <span class="keyword">property</span>.</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;- &lt;b&gt;Name&lt;/b&gt;&lt;br/&gt;Make sure you plugin returns something meaningfull <span class="keywordflow">for</span> the name <span class="keyword">property</span> of the IDirectPlugin interface. It is recommended that you also include the version and/or the build date of you plugin in the Name <span class="keyword">property</span>.</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.3.1-->
@@ -128,7 +128,7 @@ $(document).ready(function(){initNavTree('76___implementation_01_guidelines_8md.
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="76___implementation_01_guidelines_8md.html">76_Implementation Guidelines.md</a></li>
-    <li class="footer">Generated on Mon May 20 2013 12:37:20 for B2S.Server Sample Plugin by
+    <li class="footer">Generated on Sat Jun 15 2013 13:40:26 for B2S.Server Sample Plugin by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>
